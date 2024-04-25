@@ -1,0 +1,310 @@
+@import url('@tldraw/tldraw/tldraw.css');
+
+@font-face {
+  font-family: AliMamaFY;
+  src: url('/fonts/alimamafangyuan.ttf');
+}
+
+html,
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  touch-action: none;
+  overflow: hidden;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  height: 100%;
+}
+
+.lockup__link img.lockup__by {
+  height: 40px;
+  padding-right: 2px;
+}
+
+.lockup__link__mobile .lockup__link img.lockup__by {
+  padding-right: 0px;
+}
+
+.lockup__link {
+  color: var(--color-text);
+  position: absolute;
+  z-index: var(--layer-panels);
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 45px;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.lockup__link a,
+.lockup__link img,
+.lockup__link svg {
+  height: 100%;
+  /* width: 100%; */
+}
+
+.lockup__link__mobile {
+  height: 25px;
+  gap: 4px;
+  /* right: 0px; */
+}
+
+.tlui-help-menu {
+  display: none !important;
+}
+
+.lockup {
+  /* padding: 0px; */
+  width: 120px;
+}
+
+.lockup__link__mobile .lockup {
+  width: 60px;
+}
+
+.tlui-debug-panel {
+  display: none !important;
+}
+
+.lockup__link__mobile .lockup__collab {
+  font-size: 16px;
+}
+
+.lockup__link__mobile__raise {
+  bottom: 60px;
+}
+
+.lockup__collab {
+  font-size: 20px;
+  font-weight: 200;
+  /* padding: 0px 4px; */
+}
+
+/* ---------------------- Sorry --------------------- */
+
+.sorry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  height: 100dvh;
+  max-width: 100%;
+  font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  max-width: 100%;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.sorry__lockup {
+  text-align: center;
+  width: 128px;
+}
+
+.sorry img {
+  max-width: 100%;
+}
+
+.sorry ol {
+  padding-left: 32px;
+}
+
+.sorry li {
+  margin-bottom: 8px;
+}
+
+.sorry a {
+  font-weight: 600;
+  color: dodgerblue;
+}
+
+/* Tailwind stuff */
+
+/* flex min-h-screen flex-col items-center justify-between */
+.tldraw-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* fixed inset-0 */
+.tldraw-wrapper__inner {
+  position: fixed;
+  inset: 0px;
+  background-color: #e0f7fb;
+}
+
+/* bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded */
+.draw-fast-button__inner {
+  background-color: var(--color-selected);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.draw-title-empty-warning {
+  color: red;
+}
+
+a {
+  color: black;
+}
+
+.painter-layout {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99998;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.painter-layout-left {
+  position: relative;
+  width: 100px;
+  height: 100%;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.painter-layout-middle {
+  position: relative;
+  width: 1024px;
+  height: 100%;
+  z-index: 99999;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.painter-layout-right {
+  position: relative;
+  flex-grow: 1;
+  height: 100%;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.painter-layout-m-top {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  z-index: 100000;
+  pointer-events: none;
+}
+
+.painter-layout-m-middle {
+  position: relative;
+  width: 100%;
+  height: 512px;
+  z-index: 100000;
+  pointer-events: none;
+}
+
+.painter-layout-m-bottom {
+  position: relative;
+  width: 100%;
+  z-index: 100000;
+  pointer-events: none;
+  flex-grow: 1;
+}
+
+.painter-layout-title {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  z-index: 100000;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  padding: 20px;
+  pointer-events: none;
+}
+
+.lego-container {
+}
+
+.lego-middle {
+}
+
+.lego-middle-content {
+}
+
+.lego-middle-background {
+  position: absolute;
+  height: 100%;
+  width: 105%;
+}
+
+.lego-left {
+  position: relative;
+  height: 100%;
+  width: 0.75rem;
+}
+
+.lego-right {
+  position: relative;
+  height: 100%;
+  width: 0.75rem;
+}
+
+.lego-input-container {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100001;
+  pointer-events: all;
+}
+
+.lego-input-background-left {
+  position: relative;
+  height: 100%;
+  width: 8px;
+}
+
+.lego-input-background-right {
+  position: relative;
+  height: 100%;
+  width: 14px;
+}
+
+.lego-input-background-middle {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  padding: 5px;
+}
+.lego-input-background-middle-textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  resize: none;
+  background: none;
+  user-select: text;
+}
+
+.hover-up:hover {
+  top: -2px;
+}
+
+.hover-up:active {
+  top: 0px;
+}
